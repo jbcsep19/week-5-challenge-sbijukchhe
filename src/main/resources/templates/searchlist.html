@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     <title>Search Results</title>
@@ -28,10 +27,7 @@
             <div th:each="job : ${jobs}">
                 Title: <span th:text="${job.title}"></span><br>
                 Description: <span th:text="${job.description}"> </span><br>
-                Posted Date: <span th:text="${#dates.format(job.date, 'dd-MM-yyyy')}"></span><br>
-<!--                <p th:text="${#dates.format(message.date, 'dd-MMM-yyyy')}"></p>-->
-<!--                <p th:text="${#dates.format(message.date, 'MM-dd-yyyy')}"></p>-->
-<!--                Flight date and time: <span th:text="${flight.date}"></span><br><br>-->
+                Posted Date: <span th:text="${#dates.format(job.date, 'MM-dd-yyyy')}"></span><br>
                 Author: <span th:text="${job.author}"></span><br>
                 Phone: <span th:text="${job.phoneNum}"> </span><br><br>
             </div>

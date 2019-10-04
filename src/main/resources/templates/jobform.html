@@ -41,9 +41,7 @@
                             </textarea>
                         </div><br>
                         <div class="col-7">
-                            <input type="datetime-local" class="form-control" name="date">
-<!--                            <input type="datetime-local" class="form-control" name="date">-->
-<!--                            <input type="date" name="date" />-->
+                            <input type="datetime-local" class="form-control" name="date" >
                         </div><br>
                         <div class="col-7">
                             <input type="text" class="form-control"  placeholder="Author"
@@ -52,9 +50,6 @@
                         <div class="col-7">
                             <input type="text" class="form-control" placeholder="Phone Number" th:field="*{phoneNum}">
                         </div><br>
-<!--                        <input type="button" value="click" onclick="myFunction()"/>-->
-
-
                     </div>
                     <div id ="alert" style="padding-left: 62%">
                         <button type="submit" onclick="myFunction()" class="btn btn-primary">Post a Job</button>
@@ -68,8 +63,9 @@
 </div>
 
 <!--JavaScript alert!!!-->
-<script th:src="@{javascript/alert.js}"></script>
-<!--<script type="text/javascript" src="alert.js"></script>-->
+<!--<script th:src="@{javascript/alert.js}"></script>-->
+<script type="text/javascript" src="javascript/alert.js"></script>
+
 <br><br>
 <!--Footer-->
 <div th:insert="base :: footer"></div>

@@ -10,6 +10,4 @@ public interface JobRepository extends CrudRepository<Job, Long> {
     ArrayList<Job> findByDescriptionContainingIgnoreCase(String description);
     ArrayList<Job> findByPhoneNum(String phoneNum);
     ArrayList<Job> findByDate(String date);
-    void deleteByTitle(String title);
-
 }

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.time.LocalDateTime;
 
 @Controller
 public class HomeController {
@@ -29,7 +28,6 @@ public class HomeController {
 
     @PostMapping("/processjob")
     public String processForm(@ModelAttribute Job job, @RequestParam(name = "date") String date){
-//        String pattern = "yyyy-MM-dd";
         String pattern = "yyyy-MM-dd'T'hh:mm";
         try{
             String formattedDate = date.substring(1,date.length()-1);

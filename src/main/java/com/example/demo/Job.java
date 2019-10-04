@@ -1,12 +1,9 @@
 package com.example.demo;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 public class Job {
@@ -16,7 +13,6 @@ public class Job {
     private String title;
     private String description;
 
-//    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
     private Date date;
     private String author;

@@ -1,5 +1,5 @@
 
 
 function myFunction() {
-      alert("You just posted a job!");
+      alert("You posted a job !!!");
 }
