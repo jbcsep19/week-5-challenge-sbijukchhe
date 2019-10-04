@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <title>Job List</title>
+</head>
+<body>
+
+<!--Navbar-->
+<div th:insert="base :: navbar"></div>
+<br/>
+
+<br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <div class="alert alert-primary" role="alert">
+                <h2>All Jobs</h2>
+            </div>
+
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Posted Date</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Phone</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="job : ${jobs}">
+                    <td th:text="${job.title}"></td>
+                    <td th:text="${job.description}"></td>
+                    <td th:text="${#dates.format(job.date, 'dd-MMM-yyyy')}"></td>
+<!--                    <td th:text="${#dates.format(flight.date, 'dd-MM-yyyy hh:mm')}"></td>-->
+<!--                    <p th:text="${#dates.format(message.date, 'dd-MMM-yyyy')}"></p>-->
+                    <td th:text="${job.author}"></td>
+                    <td th:text="${job.phoneNum}"></td>
+                    <td>
+                        <a th:href="@{/update/{id}(id=${job.id})}">Update</a>-
+                        <a th:href="@{/detail/{id}(id=${job.id})}">Details</a>-
+                        <a th:href="@{/delete/{id}(id=${job.id})}">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div th:insert="base :: footer"></div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

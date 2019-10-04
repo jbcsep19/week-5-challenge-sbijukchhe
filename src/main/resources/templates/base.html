@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <title>Job List</title>
+</head>
+<body>
+
+<div th:fragment="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info" >
+        <a class="navbar-brand text-white"  href="/">JobInfo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active text-white"  href="/">Job Details <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link text-white"  href="/add">Post a Job</a>
+<!--                <a class="nav-item nav-link text-white"  href="/">Job Details</a>-->
+                <a class="nav-item nav-link disabled text-white"  href="#" tabindex="-1" aria-disabled="true">Contact us</a>
+            </div>
+        </div>
+        <form class="form-inline my-2 my-lg-0" th:action="@{/processsearch}" method="post">
+            <select class="form-control mr-sm-2" name ="category">
+                <option value ="1">Title</option>
+                <option value ="2">Author</option>
+                <option value ="3">Posted Date</option>
+                <option value ="4">Phone Number</option>
+            </select><br>
+            <input class="form-control mr-sm-2" type="text" placeholder="Search.." aria-label="Search" name="search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+   </nav>
+</div>
+
+
+<!--Footer-->
+<div th:fragment="footer">
+    <div class="alert alert-info" role="alert">
+        <div class="row justify-content-rt-center">
+            <div class="col">
+                &copy;2019
+            </div>
+            <div class="col">
+                <!--Facebook-->
+                <button type="button" class="btn btn-fb" onClick="parent.location='https://www.facebook.com/'">
+                    <i class="fab fa-facebook-f pr-1"></i> Facebook</button>
+                <!--Twitter-->
+                <button type="button" class="btn btn-tw" onClick="parent.location='https://www.twitter.com/'">
+                    <i class="fab fa-twitter pr-1" ></i> Twitter</button>
+                <!--Google +-->
+                <button type="button" class="btn btn-gplus" onClick="parent.location='https://www.google.com/'">
+                    <i class="fab fa-google-plus-g pr-1"></i> Google +</button>
+                <!--Linkedin-->
+                <button type="button" class="btn btn-li" onClick="parent.location='https://www.linkedin.com/'">
+                    <i class="fab fa-linkedin-in pr-1"></i> Linkedin</button>
+                <!--Instagram-->
+                <button type="button" class="btn btn-ins" onClick="parent.location='https://www.instagram.com/'">
+                    <i class="fab fa-instagram pr-1"></i> Instagram</button>
+                <!--Pinterest-->
+                <button type="button" class="btn btn-pin" onClick="parent.location='https://www.pinterest.com/'">
+                    <i class="fab fa-pinterest pr-1"></i> Pinterest</button>
+            </div>
+        </div>
+        <p>Craiglist Job Information.......</p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>
