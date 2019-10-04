@@ -33,13 +33,14 @@
                     <th scope="col">Posted Date</th>
                     <th scope="col">Author</th>
                     <th scope="col">Phone</th>
+                    <th scope="col">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="job : ${jobs}">
                     <td th:text="${job.title}"></td>
                     <td th:text="${job.description}"></td>
-                    <td th:text="${#dates.format(job.date, 'dd-MMM-yyyy')}"></td>
+                    <td th:text="${#dates.format(job.date, 'dd-MM-yyyy')}"></td>
 <!--                    <td th:text="${#dates.format(flight.date, 'dd-MM-yyyy hh:mm')}"></td>-->
 <!--                    <p th:text="${#dates.format(message.date, 'dd-MMM-yyyy')}"></p>-->
                     <td th:text="${job.author}"></td>
@@ -58,7 +59,7 @@
 
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div th:insert="base :: footer"></div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

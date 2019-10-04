@@ -6,6 +6,7 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <script type="text/javascript" src="../static/javascript/alert.js"></script>
     <title>Job Form</title>
 </head>
 
@@ -15,7 +16,7 @@
 <div th:insert="base :: navbar"></div>
 <br>
 
-<div class="container">
+<div id = "alert1" class="container">
     <div class="row">
         <div class="col">
 
@@ -51,10 +52,12 @@
                         <div class="col-7">
                             <input type="text" class="form-control" placeholder="Phone Number" th:field="*{phoneNum}">
                         </div><br>
+<!--                        <input type="button" value="click" onclick="myFunction()"/>-->
+
 
                     </div>
-                    <div style="padding-left: 64%">
-                        <button type="submit" class="btn btn-primary">Post a Job</button>
+                    <div id ="alert" style="padding-left: 62%">
+                        <button type="submit" onclick="myFunction()" class="btn btn-primary">Post a Job</button>
                     </div>
                 </fieldset>
             </form>
@@ -64,7 +67,10 @@
     </div>
 </div>
 
-<br><br><br><br><br><br>
+<!--JavaScript alert!!!-->
+<script th:src="@{javascript/alert.js}"></script>
+<!--<script type="text/javascript" src="alert.js"></script>-->
+<br><br>
 <!--Footer-->
 <div th:insert="base :: footer"></div>
 

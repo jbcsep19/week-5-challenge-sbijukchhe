@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.time.LocalDateTime;
 
 @Controller
 public class HomeController {
@@ -54,7 +55,7 @@ public class HomeController {
             model.addAttribute("jobs", jobRepository.findByAuthorContainingIgnoreCase(search));
         }
         else if (category.equals("3")){
-            model.addAttribute("jobs", jobRepository.findByDate(search));
+            model.addAttribute("jobs", jobRepository.findByDescriptionContainingIgnoreCase(search));
         }
         else if (category.equals("4")){
             model.addAttribute("jobs", jobRepository.findByPhoneNum(search));

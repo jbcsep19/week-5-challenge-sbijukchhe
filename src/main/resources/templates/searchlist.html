@@ -28,7 +28,7 @@
             <div th:each="job : ${jobs}">
                 Title: <span th:text="${job.title}"></span><br>
                 Description: <span th:text="${job.description}"> </span><br>
-                Posted Date: <span th:text="${#dates.format(job.date, 'dd-MMM-yyyy')}"></span><br>
+                Posted Date: <span th:text="${#dates.format(job.date, 'dd-MM-yyyy')}"></span><br>
 <!--                <p th:text="${#dates.format(message.date, 'dd-MMM-yyyy')}"></p>-->
 <!--                <p th:text="${#dates.format(message.date, 'MM-dd-yyyy')}"></p>-->
 <!--                Flight date and time: <span th:text="${flight.date}"></span><br><br>-->
@@ -40,7 +40,7 @@
         </div>
     </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!--Footer-->
 <div th:insert="base :: footer"></div>
 
